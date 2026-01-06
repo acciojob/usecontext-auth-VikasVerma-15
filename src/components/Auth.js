@@ -8,9 +8,11 @@ const Auth = () => {
   return (
     <div style={{ padding: "20px", fontFamily: "Arial" }}>
       <h1>Click on the checkbox to get authenticated</h1>
-      {/* Add className 'authText' and exact text the test expects */}
+      {/* Cypress expects this exact text */}
       <p className="authText">
-        {isAuthenticated ? "you are authenticated" : "you are not authenticated"}
+        {isAuthenticated
+          ? "You are now authenticated, you can proceed"
+          : "you are not authenticated"}
       </p>
       <label>
         <input type="checkbox" checked={isAuthenticated} onChange={toggleAuth} />
